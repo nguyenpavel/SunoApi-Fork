@@ -250,11 +250,11 @@ def fetch_feed(aids: list, token: str):
 with container.container():
     cols = container.columns(3)
 
-    st.session_state.Custom = False
-    if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
-        Custom = cols[0].toggle(i18n("Custom"), True)
-    else:
-        Custom = cols[0].toggle(i18n("Custom"))
+    st.session_state.Custom = True
+    #if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
+    #    Custom = cols[0].toggle(i18n("Custom"), True)
+    #else:
+    #    Custom = cols[0].toggle(i18n("Custom"))
         
     #st.session_state.TuGeYue = False
     #TuGeYue = cols[1].toggle(i18n("Images TuGeYue Music"))
