@@ -66,7 +66,7 @@ display_languages = []
 
 if 'Language' not in st.session_state:
     st.session_state.selected_index = 7
-    st.session_state.Language = "ZH"
+    st.session_state.Language = "EN" ##Pavel
 
 
 for i, code in enumerate(locales.keys()):
