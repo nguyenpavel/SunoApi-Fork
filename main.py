@@ -251,11 +251,11 @@ with container.container():
     cols = container.columns(3)
     
     #Pavel
-    #st.session_state.Custom = False
-    #if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
-    #    Custom = cols[0].toggle(i18n("Custom"), True)
-    #else:
-    #   Custom = cols[0].toggle(i18n("Custom"))
+    st.session_state.Custom = False
+    if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
+        Custom = cols[0].toggle(i18n("Custom"), True)
+    else:
+       Custom = cols[0].toggle(i18n("Custom"))
         
     #st.session_state.TuGeYue = False
     #TuGeYue = cols[1].toggle(i18n("Images TuGeYue Music"))
@@ -372,68 +372,68 @@ with container.container():
     #                 my_bar.empty()
 
     #Pavel
-    #if Custom:
-    st.session_state.Custom = True
+    if Custom:
+        st.session_state.Custom = True
 
-    if 'title_input' not in st.session_state:
-        st.session_state['title_input'] = ""
+        if 'title_input' not in st.session_state:
+            st.session_state['title_input'] = ""
 
-    Title = container.text_input(label=i18n("Title"), value=st.session_state['title_input'], placeholder=i18n("Title Placeholder"), max_chars=100, help=i18n("Title Desc"))
-    st.session_state.Title = Title
+        Title = container.text_input(label=i18n("Title"), value=st.session_state['title_input'], placeholder=i18n("Title Placeholder"), max_chars=100, help=i18n("Title Desc"))
+        st.session_state.Title = Title
 
-    if 'tags_input' not in st.session_state:
-        st.session_state['tags_input'] = ""
+        if 'tags_input' not in st.session_state:
+            st.session_state['tags_input'] = ""
 
-    if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['tags_input']:
-        Tags = container.text_input(label=i18n("Tags"), value=st.session_state['tags_input'], placeholder=i18n("Tags Placeholder"), max_chars=120, help=i18n("Tags Desc"), key="change_tags", on_change=change_tags)
-        st.session_state.Tags = st.session_state['tags_input']
-    else:
-        options = container.multiselect(
-            i18n("Tags"), ["1960s", "Adhan", "Afro-Cuban", "Afrobeat", "Aggressive", "Ambient", "Art", "Arabian", "BackGround", "Bangra", "Banger", "Barbershop", "Bedroom", "Bebop", "Big Band", "Black Metal", "Blues Rock", "Bluegrass", "Bossa Nova", "Broadway", "Cabaret", "Calypso", "Call to Prayer", "Carnival", "Children", "Children's", "Chinese pop", "Chillwave", "Classic", "Classic Rock", "Country", "Dance", "Dance Pop", "Danceable", "Dancehall", "Dark", "Death Metal", "Deathcore", "Disco", "Disco Funk", "Doo Wop", "Downtempo", "Dramatic", "Drum'n'bass", "Dub", "Dubstep", "EDM", "Electro", "Electric", "Elevator", "Emo", "Ethereal", "Festive Heavy Metal", "Forró", "Folk", "Funk", "Glam", "Glam Rock", "Glitter", "Gospel", "Grooveout", "Groovy", "Hard", "Haunted", "Heavy Metal", "High-NRG", "HipHop", "Hollow", "House", "I Want Song", "IDM", "Indie", "Industrial Rock", "Intimate", "Jazz", "Jazz/Soul", "Jewish Music", "Jingle", "Jpop", "Klezmer", "Kpop", "Latin", "Latin Jazz", "Lounge", "Lullaby", "Lyrical", "Majestic", "Magical", "March", "Metal", "Metalcore", "Middle East", "Minimal", "Misterious", "Musicbox", "Muzak", "Nu", "Nu Metal", "Operatic", "Party", "Phonk", "Polka", "Pop", "Pop Rock", "Popular", "Power", "Power Metal", "Progressive", "Punk", "Random", "Rap", "Reggae", "Reggaeton", "Retro", "RnB", "Rock", "Russian Navy Song", "Salsa", "Sinister", "Sing-along", "Skate Rock", "Skatecore", "Slow", "Soft", "Soul", "Sparse", "Stadium", "Storytelling", "Strut", "Swing", "Synthpop", "Synthwave", "Tango", "Techno", "Theatrical", "Tipsy", "Torch-Lounge", "Traditional", "Trance", "Tribal", "Troubadour", "Vegas", "Weird"],
-            [] if st.session_state['tags_input'] == "" else st.session_state['tags_input'].split(","),
-            placeholder=i18n("Tags Placeholder"),
-            help=i18n("Tags Desc"),
-            max_selections=4
-        )
-        st.session_state.Tags = ','.join(str(opts) for opts in options)
-
-    container.container()
-    cols = container.columns(2)
-    random_style = cols[0].button(i18n("Random Style"), type="secondary")
-    if random_style:
-        if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
-            tags_input = get_random_style()
-            tags_input = get_new_tags(tags_input)
-            st.session_state['tags_input'] = tags_input
+        if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['tags_input']:
+            Tags = container.text_input(label=i18n("Tags"), value=st.session_state['tags_input'], placeholder=i18n("Tags Placeholder"), max_chars=120, help=i18n("Tags Desc"), key="change_tags", on_change=change_tags)
+            st.session_state.Tags = st.session_state['tags_input']
         else:
-            st.session_state['tags_input'] = get_random_style()
-        st.rerun()
+            options = container.multiselect(
+                i18n("Tags"), ["1960s", "Adhan", "Afro-Cuban", "Afrobeat", "Aggressive", "Ambient", "Art", "Arabian", "BackGround", "Bangra", "Banger", "Barbershop", "Bedroom", "Bebop", "Big Band", "Black Metal", "Blues Rock", "Bluegrass", "Bossa Nova", "Broadway", "Cabaret", "Calypso", "Call to Prayer", "Carnival", "Children", "Children's", "Chinese pop", "Chillwave", "Classic", "Classic Rock", "Country", "Dance", "Dance Pop", "Danceable", "Dancehall", "Dark", "Death Metal", "Deathcore", "Disco", "Disco Funk", "Doo Wop", "Downtempo", "Dramatic", "Drum'n'bass", "Dub", "Dubstep", "EDM", "Electro", "Electric", "Elevator", "Emo", "Ethereal", "Festive Heavy Metal", "Forró", "Folk", "Funk", "Glam", "Glam Rock", "Glitter", "Gospel", "Grooveout", "Groovy", "Hard", "Haunted", "Heavy Metal", "High-NRG", "HipHop", "Hollow", "House", "I Want Song", "IDM", "Indie", "Industrial Rock", "Intimate", "Jazz", "Jazz/Soul", "Jewish Music", "Jingle", "Jpop", "Klezmer", "Kpop", "Latin", "Latin Jazz", "Lounge", "Lullaby", "Lyrical", "Majestic", "Magical", "March", "Metal", "Metalcore", "Middle East", "Minimal", "Misterious", "Musicbox", "Muzak", "Nu", "Nu Metal", "Operatic", "Party", "Phonk", "Polka", "Pop", "Pop Rock", "Popular", "Power", "Power Metal", "Progressive", "Punk", "Random", "Rap", "Reggae", "Reggaeton", "Retro", "RnB", "Rock", "Russian Navy Song", "Salsa", "Sinister", "Sing-along", "Skate Rock", "Skatecore", "Slow", "Soft", "Soul", "Sparse", "Stadium", "Storytelling", "Strut", "Swing", "Synthpop", "Synthwave", "Tango", "Techno", "Theatrical", "Tipsy", "Torch-Lounge", "Traditional", "Trance", "Tribal", "Troubadour", "Vegas", "Weird"],
+                [] if st.session_state['tags_input'] == "" else st.session_state['tags_input'].split(","),
+                placeholder=i18n("Tags Placeholder"),
+                help=i18n("Tags Desc"),
+                max_selections=4
+            )
+            st.session_state.Tags = ','.join(str(opts) for opts in options)
 
-    random_lyrics = cols[1].button(i18n("Generate Lyrics"), type="secondary")
-    if random_lyrics:
-        lyrics = get_random_lyrics(Title if Title != "" else st.session_state['prompt_input'], get_random_token())
-        status = lyrics["detail"] if "detail" in lyrics else (lyrics["status"] if "status" in lyrics else "success")
-        if status != "Unauthorized" and status != "Error" and status != "Expecting value: line 1 column 1 (char 0)":
-            st.session_state['title_input'] = lyrics['title'] if lyrics['title'] != "" else Title
-            st.session_state['prompt_input'] = lyrics['text'] if lyrics['title'] != "" else (st.session_state['prompt_input'] if st.session_state['prompt_input'] != "" else "")
+        container.container()
+        cols = container.columns(2)
+        random_style = cols[0].button(i18n("Random Style"), type="secondary")
+        if random_style:
+            if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
+                tags_input = get_random_style()
+                tags_input = get_new_tags(tags_input)
+                st.session_state['tags_input'] = tags_input
+            else:
+                st.session_state['tags_input'] = get_random_style()
             st.rerun()
+
+        random_lyrics = cols[1].button(i18n("Generate Lyrics"), type="secondary")
+        if random_lyrics:
+            lyrics = get_random_lyrics(Title if Title != "" else st.session_state['prompt_input'], get_random_token())
+            status = lyrics["detail"] if "detail" in lyrics else (lyrics["status"] if "status" in lyrics else "success")
+            if status != "Unauthorized" and status != "Error" and status != "Expecting value: line 1 column 1 (char 0)":
+                st.session_state['title_input'] = lyrics['title'] if lyrics['title'] != "" else Title
+                st.session_state['prompt_input'] = lyrics['text'] if lyrics['title'] != "" else (st.session_state['prompt_input'] if st.session_state['prompt_input'] != "" else "")
+                st.rerun()
+            else:
+                container.error(status)
+
+        if st.session_state['continue_at'] and st.session_state['continue_clip_id']:
+            Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Extend Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
         else:
-            container.error(status)
-
-    if st.session_state['continue_at'] and st.session_state['continue_clip_id']:
-        Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Extend Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
-    else:
-        Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
-    st.session_state.Prompt = Prompt
+            Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
+        st.session_state.Prompt = Prompt
     #Pavel
-#    else:
-#        st.session_state.Custom = False
+    else:
+        st.session_state.Custom = False
 
-#        if 'DescPrompt' not in st.session_state:
-#            st.session_state.DescPrompt = ""
+        if 'DescPrompt' not in st.session_state:
+            st.session_state.DescPrompt = ""
 
-#        DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
-#        st.session_state.DescPrompt = DescPrompt
+        DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
+        st.session_state.DescPrompt = DescPrompt
 
 #with container.container():
     #cols = container.columns(2)
