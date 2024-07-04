@@ -249,8 +249,9 @@ def fetch_feed(aids: list, token: str):
 
 with container.container():
     cols = container.columns(3)
-
-    st.session_state.Custom = True
+    
+    #Pavel
+    #st.session_state.Custom = True
     #if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
     #    Custom = cols[0].toggle(i18n("Custom"), True)
     #else:
@@ -423,14 +424,15 @@ with container.container():
         else:
             Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
         st.session_state.Prompt = Prompt
-    else:
-        st.session_state.Custom = False
+    #Pavel
+    #else:
+    #    st.session_state.Custom = False
 
-        if 'DescPrompt' not in st.session_state:
-            st.session_state.DescPrompt = ""
+    #    if 'DescPrompt' not in st.session_state:
+    #        st.session_state.DescPrompt = ""
 
-        DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
-        st.session_state.DescPrompt = DescPrompt
+    #    DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
+    #    st.session_state.DescPrompt = DescPrompt
 
 with container.container():
     cols = container.columns(2)
