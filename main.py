@@ -371,7 +371,7 @@ with container.container():
     #                 placeholder.success(i18n("Upload Audio Success"))
     #                 my_bar.empty()
 
-    if Custom:
+    #if Custom:
         st.session_state.Custom = True
 
         if 'title_input' not in st.session_state:
@@ -425,14 +425,14 @@ with container.container():
             Prompt = container.text_area(label=i18n("Prompt"), value=st.session_state['prompt_input'], placeholder=i18n("Prompt Placeholder"), height=150, max_chars=3000, help=i18n("Prompt Desc"), key="change_prompt", on_change=change_prompt)
         st.session_state.Prompt = Prompt
     #Pavel
-    else:
-        st.session_state.Custom = False
+#    else:
+#        st.session_state.Custom = False
 
-        if 'DescPrompt' not in st.session_state:
-            st.session_state.DescPrompt = ""
+#        if 'DescPrompt' not in st.session_state:
+#            st.session_state.DescPrompt = ""
 
-        DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
-        st.session_state.DescPrompt = DescPrompt
+#        DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
+#        st.session_state.DescPrompt = DescPrompt
 
 #with container.container():
     #cols = container.columns(2)
@@ -480,6 +480,7 @@ identity = ""
 Session = ""
 Cookie = ""
 
+#Pavel
 # if Setting:
 #     st.session_state.Setting = True
 #     # print(st.session_state.Setting)
