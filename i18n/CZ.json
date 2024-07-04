@@ -45,14 +45,14 @@
       "Custom Tags Error": "Prosím vyberte hudební styl, například: Čínská popová hudba (中国流行音乐).",
       "Custom Prompt Error": "Prosím zadejte své vlastní texty, pokud ne, můžete zadat klíčové slovo a poté kliknout na Vygenerovat Texty.",
   
-      "Generate Submit Error": "Suno AI Generování hudební písně selhalo při odeslání:",
-      "Generate Status Error": "Suno AI Generování hudební písně selhalo při stavu:",
+      "Generate Submit Error": "Generování hudební písně selhalo při odeslání:",
+      "Generate Status Error": "Generování hudební písně selhalo při stavu:",
   
-      "Fetch Status Progress": "Suno AI Generování hudební písně prosím čekejte...",
-      "Fetch Status Running": "Suno AI Hudební píseň se generuje:",
-      "Fetch Status Success": "Suno AI Hudební píseň byla úspěšně vygenerována:",
+      "Fetch Status Progress": "Generování hudební písně prosím čekejte...",
+      "Fetch Status Running": "Hudební píseň se generuje:",
+      "Fetch Status Success": "Hudební píseň byla úspěšně vygenerována:",
   
-      "Generate Success": "Suno AI Hudební píseň byla úspěšně vygenerována!",
+      "Generate Success": "Hudební píseň byla úspěšně vygenerována!",
   
       "Identity Placeholder": "Zadejte své ID pro identifikaci, např.: Emailový účet.",
       "Identity Help": "Prosím zadejte svůj Emailový účet pro identifikaci.",
