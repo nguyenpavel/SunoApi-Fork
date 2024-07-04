@@ -255,10 +255,11 @@ with container.container():
         Custom = cols[0].toggle(i18n("Custom"), True)
     else:
         Custom = cols[0].toggle(i18n("Custom"))
-    st.session_state.TuGeYue = False
-    TuGeYue = cols[1].toggle(i18n("Images TuGeYue Music"))
-    st.session_state.YueShengQu = False
-    YueShengQu = cols[2].toggle(i18n("Upload Audio Music"))
+        
+    #st.session_state.TuGeYue = False
+    #TuGeYue = cols[1].toggle(i18n("Images TuGeYue Music"))
+    #st.session_state.YueShengQu = False
+    #YueShengQu = cols[2].toggle(i18n("Upload Audio Music"))
 
     if TuGeYue and st.session_state.DescPrompt == "" and st.session_state['prompt_input'] == "":
         st.session_state.TuGeYue = True
