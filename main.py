@@ -261,114 +261,114 @@ with container.container():
     #st.session_state.YueShengQu = False
     #YueShengQu = cols[2].toggle(i18n("Upload Audio Music"))
 
-    if TuGeYue and st.session_state.DescPrompt == "" and st.session_state['prompt_input'] == "":
-        st.session_state.TuGeYue = True
-        upload_folder = Path("images/upload")
-        upload_folder.mkdir(exist_ok=True)
-        file_size_limit = 1024 * 1024 * 3  # 3MB
-        uploaded_file = container.file_uploader(i18n("Images TuGeYue Upload"), type=['bmp', 'webp', 'png', 'jpg', 'jpeg'], help=i18n("Images TuGeYue Help"), accept_multiple_files=False)
+    # if TuGeYue and st.session_state.DescPrompt == "" and st.session_state['prompt_input'] == "":
+    #     st.session_state.TuGeYue = True
+    #     upload_folder = Path("images/upload")
+    #     upload_folder.mkdir(exist_ok=True)
+    #     file_size_limit = 1024 * 1024 * 3  # 3MB
+    #     uploaded_file = container.file_uploader(i18n("Images TuGeYue Upload"), type=['bmp', 'webp', 'png', 'jpg', 'jpeg'], help=i18n("Images TuGeYue Help"), accept_multiple_files=False)
 
-        if uploaded_file is not None and not st.session_state['disabled_state']:
-            if uploaded_file.size > file_size_limit:
-                placeholder.error(i18n("Upload Images Error") + f"{file_size_limit / (1024 * 1024)}MB")
-            else:
-                file_ext = uploaded_file.type.split("/")[1]
-                filename = f"{time.time()}.{file_ext}"
-                my_bar = container.progress(0)
-                bytes_data = uploaded_file.read()
-                with open(upload_folder / filename, "wb") as f:
-                    f.write(bytes_data)
-                my_bar.progress(100)
-                image_url = ""
-                if "s3.bitiful.net" in S3_WEB_SITE_URL:
-                    image_url = put_upload_file(S3_WEB_SITE_URL, filename, S3_ACCESSKEY_ID, S3_SECRETKEY_ID, bytes_data)
-                elif S3_WEB_SITE_URL != "https://res.sunoapi.net":
-                    image_url = f"{S3_WEB_SITE_URL}/images/upload/{filename}"
-                elif S3_WEB_SITE_URL == "https://res.sunoapi.net":
-                    image_url = f"https://sunoapi.net/images/upload/{filename}"
-                else:
-                    image_url = "http://localhost:8501/images/upload/{filename}"
-                if "detail" in image_url:
-                    placeholder.error(i18n("Analytics Images Error") + image_url["detail"])
-                else:
-                    placeholder.success(i18n("Upload Images Success"))
-                    my_bar.empty()
-                    try:
-                        headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-                        requests.packages.urllib3.disable_warnings()
-                        resp = requests.post(
-                            url=f"{OPENAI_BASE_URL}/v1/chat/completions",
-                            headers=headers,
-                            verify=False,
-                            json={
-                                "messages": [
-                                    {
-                                        "role": "user",
-                                        "content": [
-                                            {
-                                                "type": "text",
-                                                "text": i18n("Upload Images Analytics")
-                                            },
-                                            {
-                                                "type": "image_url",
-                                                "image_url": {
-                                                    "url": image_url
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "max_tokens": 1000,
-                                "temperature": 1,
-                                "top_p": 1,
-                                "n": 1,
-                                "stream": False,
-                                "presence_penalty": 0,
-                                "frequency_penalty": 0,
-                                "model": "gpt-4o"
-                            }
-                        )
-                        if resp.status_code != 200:
-                            placeholder.error(i18n("Analytics Images Error") + f"{resp.text}")
-                        else:
-                            print(local_time() + f" ***gpt-4o image_url -> {image_url} content -> {resp.text} ***\n")
-                            content = resp.json()["choices"][0]["message"]["content"].strip()
-                            if Custom:
-                                st.session_state['prompt_input'] = content
-                            else:
-                                st.session_state.DescPrompt = content
-                            placeholder.success(i18n("Analytics Images Success"))
-                    except Exception as e:
-                        placeholder.error(i18n("Analytics Images Error") + f"{str(e)}")
+    #     if uploaded_file is not None and not st.session_state['disabled_state']:
+    #         if uploaded_file.size > file_size_limit:
+    #             placeholder.error(i18n("Upload Images Error") + f"{file_size_limit / (1024 * 1024)}MB")
+    #         else:
+    #             file_ext = uploaded_file.type.split("/")[1]
+    #             filename = f"{time.time()}.{file_ext}"
+    #             my_bar = container.progress(0)
+    #             bytes_data = uploaded_file.read()
+    #             with open(upload_folder / filename, "wb") as f:
+    #                 f.write(bytes_data)
+    #             my_bar.progress(100)
+    #             image_url = ""
+    #             if "s3.bitiful.net" in S3_WEB_SITE_URL:
+    #                 image_url = put_upload_file(S3_WEB_SITE_URL, filename, S3_ACCESSKEY_ID, S3_SECRETKEY_ID, bytes_data)
+    #             elif S3_WEB_SITE_URL != "https://res.sunoapi.net":
+    #                 image_url = f"{S3_WEB_SITE_URL}/images/upload/{filename}"
+    #             elif S3_WEB_SITE_URL == "https://res.sunoapi.net":
+    #                 image_url = f"https://sunoapi.net/images/upload/{filename}"
+    #             else:
+    #                 image_url = "http://localhost:8501/images/upload/{filename}"
+    #             if "detail" in image_url:
+    #                 placeholder.error(i18n("Analytics Images Error") + image_url["detail"])
+    #             else:
+    #                 placeholder.success(i18n("Upload Images Success"))
+    #                 my_bar.empty()
+    #                 try:
+    #                     headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
+    #                     requests.packages.urllib3.disable_warnings()
+    #                     resp = requests.post(
+    #                         url=f"{OPENAI_BASE_URL}/v1/chat/completions",
+    #                         headers=headers,
+    #                         verify=False,
+    #                         json={
+    #                             "messages": [
+    #                                 {
+    #                                     "role": "user",
+    #                                     "content": [
+    #                                         {
+    #                                             "type": "text",
+    #                                             "text": i18n("Upload Images Analytics")
+    #                                         },
+    #                                         {
+    #                                             "type": "image_url",
+    #                                             "image_url": {
+    #                                                 "url": image_url
+    #                                             }
+    #                                         }
+    #                                     ]
+    #                                 }
+    #                             ],
+    #                             "max_tokens": 1000,
+    #                             "temperature": 1,
+    #                             "top_p": 1,
+    #                             "n": 1,
+    #                             "stream": False,
+    #                             "presence_penalty": 0,
+    #                             "frequency_penalty": 0,
+    #                             "model": "gpt-4o"
+    #                         }
+    #                     )
+    #                     if resp.status_code != 200:
+    #                         placeholder.error(i18n("Analytics Images Error") + f"{resp.text}")
+    #                     else:
+    #                         print(local_time() + f" ***gpt-4o image_url -> {image_url} content -> {resp.text} ***\n")
+    #                         content = resp.json()["choices"][0]["message"]["content"].strip()
+    #                         if Custom:
+    #                             st.session_state['prompt_input'] = content
+    #                         else:
+    #                             st.session_state.DescPrompt = content
+    #                         placeholder.success(i18n("Analytics Images Success"))
+    #                 except Exception as e:
+    #                     placeholder.error(i18n("Analytics Images Error") + f"{str(e)}")
 
-    if YueShengQu and st.session_state.DescPrompt == "" and st.session_state['prompt_input'] == "":
-        st.session_state.YueShengQu = True
-        upload_folder = Path("audios/upload")
-        upload_folder.mkdir(exist_ok=True)
-        file_size_limit = 1024 * 1024 * 3  # 3MB
-        uploaded_audio = container.file_uploader(i18n("Upload Audio Files"), type=['mp3', 'wav'], help=i18n("Upload Audio Help"), accept_multiple_files=False)
+    # if YueShengQu and st.session_state.DescPrompt == "" and st.session_state['prompt_input'] == "":
+    #     st.session_state.YueShengQu = True
+    #     upload_folder = Path("audios/upload")
+    #     upload_folder.mkdir(exist_ok=True)
+    #     file_size_limit = 1024 * 1024 * 3  # 3MB
+    #     uploaded_audio = container.file_uploader(i18n("Upload Audio Files"), type=['mp3', 'wav'], help=i18n("Upload Audio Help"), accept_multiple_files=False)
 
-        if uploaded_audio is not None and not st.session_state['disabled_state']:
-            if uploaded_audio.size > file_size_limit:
-                placeholder.error(i18n("Upload Audio Error") + f"{file_size_limit / (1024 * 1024)}MB")
-            else:
-                file_ext = uploaded_audio.type.split("/")[1]
-                filename = f"{time.time()}.mp3"
-                my_bar = container.progress(0)
-                bytes_data = uploaded_audio.read()
-                with open(upload_folder / filename, "wb") as f:
-                    f.write(bytes_data)
-                my_bar.progress(10)
-                token = get_random_token()
-                audio_id = suno_upload_audio(uploaded_audio.name, bytes_data, token, my_bar)
-                if "detail" in audio_id:
-                    placeholder.error(i18n("Analytics Audio Error") + audio_id["detail"])
-                    my_bar.empty()
-                else:
-                    fetch_feed(audio_id.split(","), token)
-                    my_bar.progress(100)
-                    placeholder.success(i18n("Upload Audio Success"))
-                    my_bar.empty()
+    #     if uploaded_audio is not None and not st.session_state['disabled_state']:
+    #         if uploaded_audio.size > file_size_limit:
+    #             placeholder.error(i18n("Upload Audio Error") + f"{file_size_limit / (1024 * 1024)}MB")
+    #         else:
+    #             file_ext = uploaded_audio.type.split("/")[1]
+    #             filename = f"{time.time()}.mp3"
+    #             my_bar = container.progress(0)
+    #             bytes_data = uploaded_audio.read()
+    #             with open(upload_folder / filename, "wb") as f:
+    #                 f.write(bytes_data)
+    #             my_bar.progress(10)
+    #             token = get_random_token()
+    #             audio_id = suno_upload_audio(uploaded_audio.name, bytes_data, token, my_bar)
+    #             if "detail" in audio_id:
+    #                 placeholder.error(i18n("Analytics Audio Error") + audio_id["detail"])
+    #                 my_bar.empty()
+    #             else:
+    #                 fetch_feed(audio_id.split(","), token)
+    #                 my_bar.progress(100)
+    #                 placeholder.success(i18n("Upload Audio Success"))
+    #                 my_bar.empty()
 
     if Custom:
         st.session_state.Custom = True
