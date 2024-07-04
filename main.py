@@ -434,22 +434,22 @@ with container.container():
         DescPrompt = container.text_area(label=i18n("Desc Prompt"), value=st.session_state.DescPrompt, placeholder=i18n("Desc Value"), height=150, max_chars=200, help=i18n("Desc Reamrk"), key="change_desc_prompt", on_change=change_desc_prompt)
         st.session_state.DescPrompt = DescPrompt
 
-with container.container():
-    cols = container.columns(2)
+#with container.container():
+    #cols = container.columns(2)
+    #Pavel
+    #st.session_state.Instrumental = False
+    #instrumental = cols[0].checkbox(i18n("Instrumental"), help=i18n("Instrumental Help"))
+    #if instrumental:
+    #    st.session_state.Instrumental = True
+    #else:
+    #    st.session_state.Instrumental = False
 
-    st.session_state.Instrumental = False
-    instrumental = cols[0].checkbox(i18n("Instrumental"), help=i18n("Instrumental Help"))
-    if instrumental:
-        st.session_state.Instrumental = True
-    else:
-        st.session_state.Instrumental = False
-
-    st.session_state.Private = False
-    private = cols[1].checkbox(i18n("Private"), help=i18n("Private Help"))
-    if private:
-        st.session_state.Private = True
-    else:
-        st.session_state.Private = False
+    #st.session_state.Private = False
+    #private = cols[1].checkbox(i18n("Private"), help=i18n("Private Help"))
+    #if private:
+    #    st.session_state.Private = True
+    #else:
+    #    st.session_state.Private = False
 
 def continue_at_change():
     st.session_state['continue_at'] = st.session_state['continue_at_change']
