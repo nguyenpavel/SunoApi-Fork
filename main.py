@@ -806,7 +806,7 @@ hide_streamlit_style = """
 #MainMenu {display: none;}
 footer {display: none;}
 .eczjsme10 {display: none;}
-#root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 6rem; z-index: 1;}
+#root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 3rem; z-index: 1;}
 .st-bb {background-color: white !important;}
 </style>
 """
@@ -835,4 +835,5 @@ with col2:
     st.components.v1.html(hide_streamlit_style1, height=30)
 
 components.iframe("https://sunoapi.net/analytics.html", height=0)
+
 
