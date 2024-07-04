@@ -371,8 +371,9 @@ with container.container():
     #                 placeholder.success(i18n("Upload Audio Success"))
     #                 my_bar.empty()
 
+    #Pavel
     #if Custom:
-        st.session_state.Custom = True
+    st.session_state.Custom = True
 
         if 'title_input' not in st.session_state:
             st.session_state['title_input'] = ""
