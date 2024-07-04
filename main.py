@@ -458,9 +458,16 @@ if st.session_state['continue_at'] and st.session_state['continue_clip_id']:
     container2.text_input(label=i18n("Extend From"), value=st.session_state['continue_at'], placeholder="", max_chars=6, help=i18n("Extend From Help"), key="continue_at_change", on_change=continue_at_change)
     container2.text_input(label=i18n("Extend From Clip"), value=st.session_state['continue_clip_id'], placeholder="", max_chars=36, help="")
 
-container2 = col2.container(border=True)
-options1 = container2.multiselect(i18n("Select Model"), ["chirp-v3-0", "chirp-v3-5"], ["chirp-v3-0"] if not st.session_state['model_name'] else st.session_state['model_name'].split(","), placeholder=i18n("Select Model Placeholder"), help=i18n("Select Model Help"), max_selections=1)
-st.session_state['model_name'] = ''.join(str(opts) for opts in options1)
+#Pavel
+#container2 = col2.container(border=True)
+#options1 = container2.multiselect(i18n("Select Model"), ["chirp-v3-0", "chirp-v3-5"], ["chirp-v3-0"] if not st.session_state['model_name'] else st.session_state['model_name'].split(","), placeholder=i18n("Select Model Placeholder"), help=i18n("Select Model Help"), max_selections=1)
+#st.session_state['model_name'] = ''.join(str(opts) for opts in options1)
+
+if 'model_name' not in st.session_state:
+    st.session_state['model_name'] = "chirp-v3-5"
+else:
+    st.session_state['model_name'] = "chirp-v3-5"
+
 
 container1 = col2.container(border=True)
 
