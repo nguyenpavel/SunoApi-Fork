@@ -1,0 +1,130 @@
+{
+    "Language": "Czech",
+    "Translation": {
+      "Page Title": "Suno API AI Generátor Hudby",
+      "Page About": "Suno API AI Generátor Hudby je bezplatný software pro generování hudby pomocí AI, který využívá stávající API rozhraní k dosažení generování hudby pomocí AI. Pokud máte nějaké otázky, navštivte prosím naši webovou adresu: https://sunoapi.net",
+      "Page Header": "Vytvořte si nyní svou vlastní jedinečnou Suno AI hudbu, použijte ji zdarma a užijte si zábavu z inovativního generování hudby pomocí AI!",
+  
+      "Music Song Create": "Vytvoření Hudební Písně",
+      "Music Song Square": "Hudební Sdílené Náměstí",
+      "Music Project Readme": "Přečtěte si o Hudebním Projektu",
+      "Visit Official WebSite": "Navštivte Oficiální Web",
+      "Visit Official WebSite1": "Navštivte Oficiální Web Suno",
+      "Visit Official WebSite2": "Navštivte Oficiální Web Projektu",
+      "Join WeChat Group": "Připojte se k WeChat skupině pro diskusi",
+  
+      "Custom": "Vlastní Režim",
+      "Title": "Název Písně:",
+      "Title Desc": "Prosím zadejte název písně, maximálně 100 slov.",
+      "Tags": "Styl Hudby:",
+      "Tags Desc": "Prosím vyberte maximálně čtyři hudební styly.",
+      "Prompt": "Vaše vlastní texty:",
+      "Prompt Desc": "Prosím zadejte své texty, maximálně 1000 slov.",
+  
+      "Random Style": "Náhodný Styl",
+      "Random Lyrics": "Náhodné Texty",
+      "Generate Lyrics": "Vygenerovat Texty",
+  
+      "Title Placeholder": "Dejte své hudební písni jméno, abyste ji mohli identifikovat, sdílet a objevovat.",
+      "Tags Placeholder": "Vyberte si požadovaný hudební styl, model Suno AI dokáže rozpoznat žánry a atmosféru.",
+      "Prompt Placeholder": "Zadejte své vlastní texty nebo různé existující texty, profesionální nástroje pro pomoc s texty: https://poe.com/SuperSunoMaster.",
+  
+      "Desc Prompt": "Popis Písně:",
+      "Desc Value": "Přímo zadejte požadovaný styl hudby a téma a jedním kliknutím vytvořte profesionální kvalitu Suno AI hudebních písní!",
+      "Desc Reamrk": "Popište požadovaný styl hudby a téma (např.: Akustická popová hudba o prázdninách). Používejte žánry a atmosféry spíše než konkrétní umělce a písně.",
+      "Instrumental": "Instrumentální",
+      "Instrumental Help": "Vytvořte píseň bez textů.",
+      "Private": "Soukromé",
+      "Private Help": "Stáhněte a uložte nesdílené písně sami.",
+  
+      "Generate": "Generovat Nyní 🎵",
+  
+      "DescPrompt Error": "Prosím zadejte popis písně, například: napište píseň podobného stylu jako 'Nocturne' nazvanou 'Nocturne: Vystoupit na Pódium pro Převzetí Ceny'.",
+  
+      "Custom Title Error": "Prosím zadejte název písně, například: Nocturne na pódium přijmout cenu.",
+      "Custom Tags Error": "Prosím vyberte hudební styl, například: Čínská popová hudba (中国流行音乐).",
+      "Custom Prompt Error": "Prosím zadejte své vlastní texty, pokud ne, můžete zadat klíčové slovo a poté kliknout na Vygenerovat Texty.",
+  
+      "Generate Submit Error": "Suno AI Generování hudební písně selhalo při odeslání:",
+      "Generate Status Error": "Suno AI Generování hudební písně selhalo při stavu:",
+  
+      "Fetch Status Progress": "Suno AI Generování hudební písně prosím čekejte...",
+      "Fetch Status Running": "Suno AI Hudební píseň se generuje:",
+      "Fetch Status Success": "Suno AI Hudební píseň byla úspěšně vygenerována:",
+  
+      "Generate Success": "Suno AI Hudební píseň byla úspěšně vygenerována!",
+  
+      "Identity Placeholder": "Zadejte své ID pro identifikaci, např.: Emailový účet.",
+      "Identity Help": "Prosím zadejte svůj Emailový účet pro identifikaci.",
+      "Session Placeholder": "Zadejte svou Session pro použití zdarma generované hudby.",
+      "Session Help": "Prosím zadejte svou Session pro použití zdarma generované hudby.",
+      "Cookie Placeholder": "Zadejte svůj Cookie pro použití zdarma generované hudby.",
+      "Cookie Help": "Prosím zadejte svůj Cookie pro generování hudby zdarma.",
+  
+      "Setting": "Nastavit Informace",
+      "SaveInfo Identity Error": "Prosím zadejte Identitu",
+      "SaveInfo Session Error": "Prosím zadejte Session",
+      "SaveInfo Cookie Error": "Prosím zadejte Cookie",
+      "SaveInfo": "Uložit Informace",
+      "SaveInfo Success": "Informace úspěšně uloženy!",
+      "SaveInfo Error": "Uložení informací selhalo!",
+  
+      "TokenAuth Error": "Prosím nejprve uložte informace a poté obnovte stránku, abyste ji mohli používat normálně!",
+  
+      "FetchFeed": "Získat hudební klip",
+      "FeedID": "ID Hudebního Klipu:",
+      "FeedID Placeholder": "Prosím zadejte vygenerované ID hudebního klipu, klikněte na získat pro zobrazení.",
+      "FeedID Help": "Prosím zadejte vygenerované ID hudebního klipu, klikněte na získat pro zobrazení.",
+      "FeedBtn": "Získat informace",
+      "FetchFeed FeedID Empty": "Prosím zadejte vygenerované ID hudebního klipu.",
+      "FetchFeed FeedID Error": "Formát ID hudebního klipu je nesprávný.",
+      "FetchFeed Error": "Získání informací o Suno AI hudebním klipu selhalo:",
+      "FetchFeed Success": "Informace o Suno AI hudebním klipu byly úspěšně získány!",
+  
+      "Generation Task Status": "Úloha generování hudby ještě nebyla dokončena, aktuální stav je:",
+  
+      "Enter Search Keywords": "Prosím zadejte hledané klíčová slova",
+      "No Search Result": "Nebyl nalezen žádný výsledek hledání.",
+  
+      "Music Duration": "Délka písně:",
+      "Music Created At": "Čas generování:",
+      "Music Prompt": "Vygenerovat texty:\n",
+  
+      "Images TuGeYue Music": "Nahrát obrázky",
+      "Images TuGeYue Upload": "Vybrat obrázek:",
+      "Images TuGeYue Help": "Nahrát obrázky pro generování odpovídajících písní na základě obsahu obrázku (limit velikosti nahraného souboru obrázku: 2MB)",
+      "Upload Images Error": "Velikost souboru obrázku překračuje limit. Limit velikosti nahraného souboru obrázku je:",
+      "Upload Images Success": "Nahrání obrázku bylo úspěšné, probíhá inteligentní rozpoznávání. Prosím čekejte!",
+      "Upload Images Analytics": "Prosím pomozte mi analyzovat obsah tohoto obrázku, shrňte a popište informace vyjádřené na obrázku. První věta poskytuje stručný popis tématu vyjádřeného obrázkem, zatímco druhá věta poskytuje podrobný popis obsahu obrázku. Přímo výstup téma a obsah, aniž byste použili slova jako 'tento obrázek vyjadřuje', 'na tomto obrázku' nebo 'tento obrázek vyjadřuje'. Jednoduše výstup téma a obsah.",
+      "Analytics Images Error": "Inteligentní rozpoznávání obrázku selhalo:",
+      "Analytics Images Success": "Inteligentní rozpoznávání obrázku bylo úspěšné, lze jej dle potřeby upravit a poté kliknout na okamžité generování!",
+      "Friendly Link": "Sponzoři a přátelské odkazy",
+  
+      "Song Part": "Část",
+      "Full Song": "Celá",
+      "Reuse Prompt": "Znovu použít výzvu",
+      "Continue Extend": "Pokračovat v rozšíření",
+      "Get Whole Song": "Získat celou píseň",
+      "Extend Button": "Rozšířit🎵",
+      "Extend Placeholder": "Zadejte další texty, abyste rozšířili píseň na základě vašich předchozích odstavců písně. Po vytvoření rozšířené písně klikněte na tlačítko Získat Celou Píseň na stránce přehrávání pro získání celé písně.",
+      "Extend From": "Rozšířit od časového bodu:",
+      "Extend From Help": "Rozšířit nový úsek písně (např. 120) od časového bodu rozšíření ID klipu písně. Pokud tomu nerozumíte, není potřeba to měnit. Rozšíření začne od konce písně ve výchozím nastavení.",
+      "Extend From Clip": "Rozšířit ID klipu písně:",
+  
+      "Select Model": "Hudební model:",
+      "Select Model Placeholder": "Prosím vyberte model pro generování hudebních písní. Výchozí model je chirp-v3-0.",
+      "Select Model Help": "Model chirp-v3-0 může generovat až 2 minuty dlouhé úseky písně, model chirp-v3-5 může generovat až 4 minuty dlouhé úseky písně.",
+      "Select Model Error": "Prosím vyberte hudební model, například: chirp-v3-0.",
+  
+      "Upload Audio Music": "Nahrát audia",
+      "Upload Audio Files": "Vybrat audio:",
+      "Upload Audio Help": "Nahrát audio pro generování odpovídajících písní na základě obsahu audia (limit velikosti nahraného souboru audia: 2MB, musí být originální audio mezi 6 a 60 sekundami).",
+      "Upload Audio Error": "Velikost souboru audia překračuje limit. Limit velikosti nahraného souboru audia je:",
+      "Upload Audio Success": "Nahrání souboru audia bylo úspěšné, uloženo a rozpoznáno. Prosím přejděte na stránku přehrávání hudebního sdíleného náměstí pro operaci rozšíření!",
+      "Analytics Audio Error": "Nahrání a rozpoznání souboru audia selhalo:",
+      "Upload Audio Type": "Nahraný",
+  
+      "Get Similar Song": "Podobné"
+    }
+  }
+  
