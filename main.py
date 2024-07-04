@@ -251,7 +251,7 @@ with container.container():
     cols = container.columns(3)
     
     #Pavel
-    st.session_state.Custom = False
+    #st.session_state.Custom = False
     if (st.session_state['continue_at'] and st.session_state['continue_clip_id']) or st.session_state['prompt_input']:
         Custom = cols[0].toggle(i18n("Custom"), True)
     else:
