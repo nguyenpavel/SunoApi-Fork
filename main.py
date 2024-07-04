@@ -554,44 +554,44 @@ container2 = col2.container(border=True)
 st.session_state.FetchFeed = False
 
 #Pavel Get Music Clip
-# FetchFeed = container2.toggle(i18n("FetchFeed"))
+FetchFeed = container2.toggle(i18n("FetchFeed"))
 
-# if FetchFeed:
-#     st.session_state.FetchFeed = True
+if FetchFeed:
+    st.session_state.FetchFeed = True
 
-#     FeedID = container2.text_input(label=i18n("FeedID"), value="", placeholder=i18n("FeedID Placeholder"), max_chars=100, help=i18n("FeedID Help"))
-#     st.session_state.FeedID = FeedID
+    FeedID = container2.text_input(label=i18n("FeedID"), value="", placeholder=i18n("FeedID Placeholder"), max_chars=100, help=i18n("FeedID Help"))
+    st.session_state.FeedID = FeedID
 
-#     st.session_state.FeedBtn = False
-#     FeedBtn = container2.button(i18n("FeedBtn"))
-#     if FeedBtn:
-#         st.session_state.FeedBtn = True
-#         if FeedID == "":
-#             placeholder.error(i18n("FetchFeed FeedID Empty"))
-#         elif "add" in FeedID:
-#             for item in FeedID.split(" ")[1].split(","):
-#                 result = suno_sqlite.operate_one("update music set private=0 where aid=?", (item,))
-#                 placeholder.success(i18n("FetchFeed Success") + item)
-#         elif "del" in FeedID:
-#             for item in FeedID.split(" ")[1].split(","):
-#                 result = suno_sqlite.operate_one("update music set private=1 where aid=?", (item,))
-#                 placeholder.success(i18n("FetchFeed Success") + item)
-#         elif len(FeedID) >= 36:
-#             FeedIDs = FeedID.split(",")
-#             token = get_random_token()
-#             fetch_feed(FeedIDs, token)
-#         else:
-#             FeedIDs = FeedID * 1
-#             count = 0
-#             for i in range(int(FeedIDs), -1, -1):
-#                 print(i, end=" ")
-#                 token = get_random_token()
-#                 fetch_feed(str(i), token)
-#                 count += 1
-#                 if count % 5 == 0:
-#                     print(end="\n")
-#     else:
-#         st.session_state.FeedBtn = False
+    st.session_state.FeedBtn = False
+    FeedBtn = container2.button(i18n("FeedBtn"))
+    if FeedBtn:
+        st.session_state.FeedBtn = True
+        if FeedID == "":
+            placeholder.error(i18n("FetchFeed FeedID Empty"))
+        elif "add" in FeedID:
+            for item in FeedID.split(" ")[1].split(","):
+                result = suno_sqlite.operate_one("update music set private=0 where aid=?", (item,))
+                placeholder.success(i18n("FetchFeed Success") + item)
+        elif "del" in FeedID:
+            for item in FeedID.split(" ")[1].split(","):
+                result = suno_sqlite.operate_one("update music set private=1 where aid=?", (item,))
+                placeholder.success(i18n("FetchFeed Success") + item)
+        elif len(FeedID) >= 36:
+            FeedIDs = FeedID.split(",")
+            token = get_random_token()
+            fetch_feed(FeedIDs, token)
+        else:
+            FeedIDs = FeedID * 1
+            count = 0
+            for i in range(int(FeedIDs), -1, -1):
+                print(i, end=" ")
+                token = get_random_token()
+                fetch_feed(str(i), token)
+                count += 1
+                if count % 5 == 0:
+                    print(end="\n")
+    else:
+        st.session_state.FeedBtn = False
 
 if st.session_state['continue_at'] and st.session_state['continue_clip_id']:
     StartBtn = col2.button(i18n("Extend Button"), use_container_width=True, type="primary", disabled=False)
