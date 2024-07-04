@@ -65,7 +65,7 @@ display_languages = []
 
 if 'Language' not in st.session_state:
     st.session_state.selected_index = 7
-    st.session_state.Language = "CZ"  # Default to Czech
+    st.session_state.Language = "EN"  # Default to Czech
 
 for i, code in enumerate(locales.keys()):
     display_languages.append(f"{code} - {locales[code].get('Language')}")
@@ -835,5 +835,3 @@ with col2:
     st.components.v1.html(hide_streamlit_style1, height=30)
 
 components.iframe("https://sunoapi.net/analytics.html", height=0)
-
-
