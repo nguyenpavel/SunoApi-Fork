@@ -800,12 +800,14 @@ if StartBtn:
             else:
                 placeholder.error(i18n("Generate Status Error") + (resp1[0]['status'] if resp1[0]['metadata']["error_message"] is None else resp1[0]['metadata']["error_message"]))
 
-# Hide right menu and footer
+# Hide right menu and footer and adjust padding to avoid header overlap
 hide_streamlit_style = """
 <style>
 #MainMenu {display: none;}
 footer {display: none;}
 .eczjsme10 {display: none;}
+#root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 6rem; z-index: 1;}
+.st-bb {background-color: white !important;}
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
@@ -833,3 +835,4 @@ with col2:
     st.components.v1.html(hide_streamlit_style1, height=30)
 
 components.iframe("https://sunoapi.net/analytics.html", height=0)
+
