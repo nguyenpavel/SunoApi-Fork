@@ -29,6 +29,10 @@ S3_WEB_SITE_URL = os.getenv("S3_WEB_SITE_URL")
 S3_ACCESSKEY_ID = os.getenv("S3_ACCESSKEY_ID")
 S3_SECRETKEY_ID = os.getenv("S3_SECRETKEY_ID")
 
+IDENTITY = os.getenv("IDENTITY", "")
+SESSION = os.getenv("SESSION", "")
+COOKIE = os.getenv("COOKIE", "")
+
 from sqlite import SqliteTool
 
 suno_sqlite = SqliteTool()
@@ -477,9 +481,9 @@ else:
 # st.session_state.Setting = False
 # Setting = container1.toggle(i18n("Setting"))
 
-identity = ""
-Session = ""
-Cookie = ""
+identity = IDENTITY
+session = SESSION
+cookie = COOKIE
 
 #Pavel
 # if Setting:
