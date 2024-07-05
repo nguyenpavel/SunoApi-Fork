@@ -482,8 +482,8 @@ st.session_state.Setting = False
 Setting = container1.toggle(i18n("Setting"))
 
 identity = IDENTITY
-session = SESSION
-cookie = COOKIE
+Session = SESSION
+Cookie = COOKIE
 
 #Pavel
 if Setting:
